@@ -28,13 +28,7 @@ class ActivityCalendar : AppCompatActivity() {
         }
 
         btn_addEvent.setOnClickListener {
-            val addScheduleFragmeant = AddScheduleFragment()
-            val fragmeant : Fragment? =
-            supportFragmentManager.findFragmentByTag(AddScheduleFragment::class.java.simpleName)
-            if (fragmeant !is AddScheduleFragment) {
-                supportFragmentManager.beginTransaction().add(R.id.container, addScheduleFragmeant, AddScheduleFragment::class.java.simpleName).commit()
-            }
-            btn_addEvent.visibility = View.GONE
+
         }
     }
 }
