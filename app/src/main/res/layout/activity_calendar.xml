@@ -6,37 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".ActivityCalendar">
 
-    <TextView
-        android:id="@+id/tv_background"
-        android:layout_width="377dp"
-        android:layout_height="256dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="316dp"
-        android:background="@drawable/textview_border"
+    <com.applandeo.materialcalendarview.CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="383dp"
+        android:layout_height="462dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
+        app:eventsEnabled="true"
+        app:headerColor="#8BC34A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_today"
-        android:layout_width="149dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="380dp"
-        android:text="今日事項:"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_toDo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="476dp"
-        android:text="代辦事項:"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:selectionColor="#2196F3"
+        app:selectionLabelColor="#FFFFFF"
+        app:todayLabelColor="#8BC34A"
+        app:type="one_day_picker" />
 
     <LinearLayout
         android:layout_width="412dp"
