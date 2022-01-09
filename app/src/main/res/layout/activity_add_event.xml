@@ -14,8 +14,8 @@
         android:layout_marginTop="60dp"
         android:text="新增活動"
         android:textSize="30sp"
-        tools:layout_constraintStart_toStartOf="parent"
-        tools:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_title"
@@ -27,8 +27,8 @@
         android:hint="新增標題"
         android:inputType="textPersonName"
         android:textSize="24sp"
-        tools:layout_constraintStart_toStartOf="parent"
-        tools:layout_constraintTop_toBottomOf="@+id/tv_title" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <TextView
         android:id="@+id/tv_time"
@@ -38,17 +38,13 @@
         android:layout_marginTop="252dp"
         android:text="時間:"
         android:textSize="24sp"
-        tools:layout_constraintStart_toStartOf="parent"
-        tools:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" /><![CDATA[
 
-    <ListView
-        android:layout_width="36dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="256dp"
-        tools:layout_constraintStart_toStartOf="parent"
-        tools:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+    app:layout_constraintTop_toTopOf="parent"
+    tools:ignore="TouchTargetSizeCheck" />
+
+    ]]>
 
     <TextView
         android:id="@+id/tv_frequency"
@@ -58,8 +54,8 @@
         android:layout_marginTop="420dp"
         android:text="週期:"
         android:textSize="24sp"
-        tools:layout_constraintStart_toStartOf="parent"
-        tools:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_noticeTime"
@@ -69,17 +65,18 @@
         android:layout_marginTop="352dp"
         android:text="通知時間:"
         android:textSize="24sp"
-        tools:layout_constraintStart_toStartOf="parent"
-        tools:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="216dp"
         android:layout_height="64dp"
         android:layout_marginStart="148dp"
         android:layout_marginTop="408dp"
         android:orientation="horizontal"
-        tools:layout_constraintStart_toStartOf="parent"
-        tools:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/rb_month"
@@ -98,67 +95,28 @@
             android:layout_width="83dp"
             android:layout_height="wrap_content"
             android:text="不重複" />
-    </RadioGroup>
+    </RadioGroup><![CDATA[
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="256dp"
-        android:text="年"
-        android:textSize="24sp"
-        tools:layout_constraintStart_toStartOf="parent"
-        tools:layout_constraintTop_toTopOf="parent" />
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="256dp"
-        android:text="月"
-        android:textSize="24sp"
-        tools:layout_constraintStart_toStartOf="parent"
-        tools:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="316dp"
-        android:layout_marginTop="256dp"
-        android:text="日"
-        android:textSize="24sp"
-        tools:layout_constraintStart_toStartOf="parent"
-        tools:layout_constraintTop_toTopOf="parent" />
 
-    <ListView
-        android:layout_width="44dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="260dp"
-        tools:layout_constraintStart_toEndOf="@+id/textView"
-        tools:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
 
-    <ListView
-        android:layout_width="43dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="260dp"
-        android:layout_marginTop="256dp"
-        tools:layout_constraintStart_toStartOf="parent"
-        tools:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
 
-    <ListView
-        android:layout_width="34dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="352dp"
-        tools:layout_constraintStart_toStartOf="parent"
-        tools:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+
+    app:layout_constraintTop_toTopOf="parent"
+    tools:ignore="TouchTargetSizeCheck" />
+
+    app:layout_constraintTop_toTopOf="parent"
+    tools:ignore="TouchTargetSizeCheck" />
+
+
+
+    app:layout_constraintTop_toTopOf="parent"
+    tools:ignore="TouchTargetSizeCheck" />
+
+    ]]>
 
     <TextView
         android:id="@+id/textView4"
@@ -168,17 +126,26 @@
         android:layout_marginTop="352dp"
         android:text="提前_分鐘"
         android:textSize="24sp"
-        tools:layout_constraintStart_toStartOf="parent"
-        tools:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_return"
+        android:id="@+id/btn_done"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="24dp"
-        android:text="返回"
-        tools:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_constraintStart_toStartOf="parent" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="確認"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        tools:layout_editor_absoluteX="148dp" />
+
+    <TextView
+        android:id="@+id/tv_selectedDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="252dp"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_time"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
