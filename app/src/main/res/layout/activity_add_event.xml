@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/addbackground"
     tools:context=".ActivityAddEvent">
 
     <TextView
@@ -31,7 +32,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <TextView
-        android:id="@+id/tv_time"
+        android:id="@+id/tv_time_add_event"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
@@ -95,7 +96,8 @@
             android:layout_width="83dp"
             android:layout_height="wrap_content"
             android:text="不重複" />
-    </RadioGroup><![CDATA[
+    </RadioGroup>
+    <![CDATA[
 
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
@@ -133,10 +135,11 @@
         android:id="@+id/btn_done"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
         android:layout_marginTop="44dp"
         android:text="確認"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        tools:layout_editor_absoluteX="148dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <TextView
         android:id="@+id/tv_selectedDate"
@@ -145,7 +148,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="252dp"
         android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/tv_time"
+        app:layout_constraintStart_toEndOf="@+id/tv_time_add_event"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
