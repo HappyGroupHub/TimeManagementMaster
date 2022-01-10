@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                         sleep(1000)
                         runOnUiThread {
                             val tv_currentTime = findViewById<TextView>(R.id.tv_currentTime)
-                            val sdf = SimpleDateFormat("yyyy/M/dd\nhh:mm:ss")
+                            val sdf = SimpleDateFormat("yyyy/M/dd\nHH:mm:ss")
                             val currentDate = sdf.format(Date())
                             tv_currentTime.text = ("現在時間\n$currentDate")
                         }
