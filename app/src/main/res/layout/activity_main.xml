@@ -16,7 +16,7 @@
         android:layout_marginTop="64dp"
         android:background="@drawable/textview_border"
         android:gravity="center"
-        android:text="現在時間\n2021/12/30\n12:00"
+        android:text="現在時間\n\n"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -68,6 +68,7 @@
             android:background="#80FFFFFF"
             app:srcCompat="@drawable/settings"
             tools:ignore="SpeakableTextPresentCheck" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
