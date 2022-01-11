@@ -58,6 +58,5 @@ class ActivityAddEvent : AppCompatActivity(), TimePickerDialog.OnTimeSetListener
         savedMinute = minute
         val tv_time = findViewById<TextView>(R.id.tv_time)
         tv_time.text = "$hourOfDay:$minute"
-
     }
 }
