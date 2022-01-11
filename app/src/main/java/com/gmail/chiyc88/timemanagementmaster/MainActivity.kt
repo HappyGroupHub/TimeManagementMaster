@@ -35,16 +35,14 @@ class MainActivity : AppCompatActivity() {
         preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
         val tv_event = findViewById<TextView>(R.id.tv_event)
         val eventName = preferences.getString("eventName", "")
+        val date = preferences.getString("date", "")
         val time = preferences.getString("time", "")
 
         if (eventName != null) {
             if (!eventName.isEmpty()) {
-                tv_event.text = "活動名稱: $eventName\n 時間: $time"
+                tv_event.text = "活動名稱: $eventName\n 時間: $date $time"
             }
         }
-
-
-
 
         /**現在時間*/
         val t: Thread = object : Thread() {

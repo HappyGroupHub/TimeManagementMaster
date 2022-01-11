@@ -42,8 +42,11 @@ class ActivityAddEvent : AppCompatActivity(), TimePickerDialog.OnTimeSetListener
             /**儲存資料*/
             sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
             val editor: SharedPreferences.Editor = sharedPreferences.edit()
-            editor.putString("eventName", et_eventName.toString())
-            editor.putString("time", tv_time.toString())
+            val date = String.format(dateLong)
+            editor.putString("eventName", et_eventName.text.toString())
+            editor.putString("date", date)
+            editor.putString("time", tv_time.text.toString())
+            editor.apply()
 
 
             val b = Bundle()
