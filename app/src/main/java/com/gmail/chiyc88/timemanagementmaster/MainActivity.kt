@@ -37,10 +37,11 @@ class MainActivity : AppCompatActivity() {
         val eventName = preferences.getString("eventName", "")
         val date = preferences.getString("date", "")
         val time = preferences.getString("time", "")
+        val pureTimeDate = preferences.getString("pureTimeDate", "")
 
         if (eventName != null) {
             if (!eventName.isEmpty()) {
-                tv_event.text = "活動名稱: $eventName\n 時間: $date $time"
+                tv_event.text = "活動名稱: $eventName\n 時間: $date $time\n$pureTimeDate"
             }
         }
 
