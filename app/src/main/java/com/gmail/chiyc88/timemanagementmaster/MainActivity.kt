@@ -1,15 +1,21 @@
 package com.gmail.chiyc88.timemanagementmaster
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.TextClock
 import android.widget.TextView
+import org.w3c.dom.Text
 import java.text.SimpleDateFormat
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var preferences: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -24,6 +30,20 @@ class MainActivity : AppCompatActivity() {
         ibt_settings.setOnClickListener {
             startActivity(intent_settings)
         }
+
+        /**讀取活動跟時間*/
+        preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        val tv_event = findViewById<TextView>(R.id.tv_event)
+        val eventName = preferences.getString("eventName", "")
+        val time = preferences.getString("time", "")
+
+        if (eventName != null) {
+            if (!eventName.isEmpty()) {
+                tv_event.text = "活動名稱: $eventName\n 時間: $time"
+            }
+        }
+
+
 
 
         /**現在時間*/

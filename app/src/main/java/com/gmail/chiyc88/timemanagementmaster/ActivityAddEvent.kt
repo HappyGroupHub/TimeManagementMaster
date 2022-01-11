@@ -2,9 +2,12 @@ package com.gmail.chiyc88.timemanagementmaster
 
 import android.app.Activity
 import android.app.TimePickerDialog
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.TimePicker
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +15,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class ActivityAddEvent : AppCompatActivity(), TimePickerDialog.OnTimeSetListener {
+
+    lateinit var sharedPreferences: SharedPreferences
 
     var hour = 0
     var minute = 0
@@ -31,6 +36,16 @@ class ActivityAddEvent : AppCompatActivity(), TimePickerDialog.OnTimeSetListener
 
         val btn_done = findViewById<Button>(R.id.btn_done)
         btn_done.setOnClickListener {
+            val et_eventName = findViewById<EditText>(R.id.et_eventName)
+            val tv_time = findViewById<TextView>(R.id.tv_time)
+
+            /**儲存資料*/
+            sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+            val editor: SharedPreferences.Editor = sharedPreferences.edit()
+            editor.putString("eventName", et_eventName.toString())
+            editor.putString("time", tv_time.toString())
+
+
             val b = Bundle()
             setResult(Activity.RESULT_OK, Intent().putExtras(b))
             finish()
@@ -38,12 +53,13 @@ class ActivityAddEvent : AppCompatActivity(), TimePickerDialog.OnTimeSetListener
         pickTime()
     }
 
+
+    /**時間選擇*/
     fun getTimeCalendar() {
         val cal = Calendar.getInstance()
         hour = cal.get(Calendar.HOUR)
         minute = cal.get(Calendar.MINUTE)
     }
-
     fun pickTime() {
         val btn_selectTime = findViewById<Button>(R.id.btn_selectTime)
         btn_selectTime.setOnClickListener {
