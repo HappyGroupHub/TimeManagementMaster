@@ -67,6 +67,7 @@ class ActivityAddEvent : AppCompatActivity(), TimePickerDialog.OnTimeSetListener
         hour = cal.get(Calendar.HOUR)
         minute = cal.get(Calendar.MINUTE)
     }
+
     fun pickTime() {
         val btn_selectTime = findViewById<Button>(R.id.btn_selectTime)
         btn_selectTime.setOnClickListener {
@@ -76,15 +77,19 @@ class ActivityAddEvent : AppCompatActivity(), TimePickerDialog.OnTimeSetListener
 
         }
     }
+
     override fun onTimeSet(p0: TimePicker?, hourOfDay: Int, minute: Int) {
         savedHour = hourOfDay
         savedMinute = minute
-        var minuteMM = minute.toString() /**如果分鐘<10*/
-        var hourHH = hourOfDay.toString() /**如果小時<10*/
+        var minuteMM = minute.toString()
+
+        /**如果分鐘<10*/
+        var hourHH = hourOfDay.toString()
+        /**如果小時<10*/
         if (minute < 10) {
             minuteMM = "0$minute"
         }
-        if (hourOfDay < 10 ) {
+        if (hourOfDay < 10) {
             hourHH = "0$hourOfDay"
         }
         val tv_time = findViewById<TextView>(R.id.tv_time)

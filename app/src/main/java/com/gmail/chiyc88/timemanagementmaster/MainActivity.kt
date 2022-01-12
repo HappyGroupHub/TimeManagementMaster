@@ -7,13 +7,10 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
-import android.widget.LinearLayout
-import android.widget.TextClock
 import android.widget.TextView
-import org.w3c.dom.Text
+import androidx.appcompat.app.AppCompatActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -36,28 +33,28 @@ class MainActivity : AppCompatActivity() {
         }
 
         /**讀取活動跟時間*/
-        preferences= getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
         val tv_event = findViewById<TextView>(R.id.tv_event)
         val eventName = preferences.getString("eventName", "")
         val date = preferences.getString("date", "")
         val time = preferences.getString("time", "")
-        val wt_notice =preferences.getString("notice","")
-        val voice=preferences.getString("voice","")
+        val wt_notice = preferences.getString("notice", "")
+        val voice = preferences.getString("voice", "")
         val pureTimeDate = preferences.getString("pureTimeDate", "")
 
 //        if (eventName != null) {
 //            if (!eventName.isEmpty()) {
-                tv_event.text =
-                    "活動名稱: $eventName\n時間:\n$date $time"
+        tv_event.text =
+            "活動名稱: $eventName\n時間:\n$date $time"
 //            }
 //        }
 
 
         /**通知*/
         lateinit var manager: NotificationManager
-        lateinit var builder : Notification.Builder
+        lateinit var builder: Notification.Builder
 
-        fun noti(i:String,j:String,k:String) {
+        fun noti(i: String, j: String, k: String) {
             manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             if (k == "1") {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -103,8 +100,8 @@ class MainActivity : AppCompatActivity() {
                             val sdf = SimpleDateFormat("yyyy/MM/dd\nHH:mm:ss")
                             val currentDate = sdf.format(Date())
                             tv_currentTime.text = ("現在時間\n$currentDate")
-                            if(pureTimeDate==currentDate){
-                                noti(eventName.toString(),date.toString(),voice.toString())
+                            if (pureTimeDate == currentDate) {
+                                noti(eventName.toString(), date.toString(), voice.toString())
                                 manager.notify(0, builder.build())
                             }
                         }

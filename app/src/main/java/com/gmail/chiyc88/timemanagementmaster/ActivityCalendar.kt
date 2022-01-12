@@ -1,17 +1,13 @@
 package com.gmail.chiyc88.timemanagementmaster
 
 import android.app.Activity
-import android.app.ProgressDialog
 import android.content.Intent
-import android.content.res.Resources
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.res.ResourcesCompat
-import java.util.*
 import com.applandeo.materialcalendarview.EventDay
+import java.util.*
 
 class ActivityCalendar : AppCompatActivity() {
 

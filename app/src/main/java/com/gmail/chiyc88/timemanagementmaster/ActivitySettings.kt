@@ -1,10 +1,10 @@
 package com.gmail.chiyc88.timemanagementmaster
 
-import android.app.*
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.*
@@ -103,7 +103,7 @@ class ActivitySettings : AppCompatActivity(), DatePickerDialog.OnDateSetListener
 
     override fun onDateSet(p0: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         savedDay = dayOfMonth
-        savedMonth = month+1 //神奇的bug, 要+1才會正常
+        savedMonth = month + 1 //神奇的bug, 要+1才會正常
         savedYear = year
 
         getDateTimeCalendar()
