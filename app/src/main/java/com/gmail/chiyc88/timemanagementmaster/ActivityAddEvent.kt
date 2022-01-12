@@ -44,7 +44,7 @@ class ActivityAddEvent : AppCompatActivity(), TimePickerDialog.OnTimeSetListener
             sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
             val editor: SharedPreferences.Editor = sharedPreferences.edit()
             val date = String.format(dateLong)
-            val sdf = SimpleDateFormat("yyyyMMdd")
+            val sdf = SimpleDateFormat("yyyy/MM/dd\n")
             val pureDateLong = sdf.format(selectedDate?.toLong())
             val pureTimeDate = String.format(pureDateLong) + pureTime
             editor.putString("eventName", et_eventName.text.toString())
@@ -52,7 +52,6 @@ class ActivityAddEvent : AppCompatActivity(), TimePickerDialog.OnTimeSetListener
             editor.putString("time", tv_time.text.toString())
             editor.putString("pureTimeDate", pureTimeDate)
             editor.apply()
-
 
             val b = Bundle()
             setResult(Activity.RESULT_OK, Intent().putExtras(b))
@@ -82,6 +81,6 @@ class ActivityAddEvent : AppCompatActivity(), TimePickerDialog.OnTimeSetListener
         savedMinute = minute
         val tv_time = findViewById<TextView>(R.id.tv_time)
         tv_time.text = "$hourOfDay:$minute"
-        pureTime = "$hourOfDay$minute"
+        pureTime = "$hourOfDay:$minute:00"
     }
 }

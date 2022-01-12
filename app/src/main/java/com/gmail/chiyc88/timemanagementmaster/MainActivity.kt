@@ -1,8 +1,12 @@
 package com.gmail.chiyc88.timemanagementmaster
 
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
@@ -41,8 +45,30 @@ class MainActivity : AppCompatActivity() {
 
         if (eventName != null) {
             if (!eventName.isEmpty()) {
-                tv_event.text = "活動名稱: $eventName\n 時間: $date $time\n$pureTimeDate"
+                tv_event.text = "活動名稱: $eventName\n時間: $date $time"
             }
+        }
+
+
+        /**通知*/
+        lateinit var manager: NotificationManager
+        lateinit var builder : Notification.Builder
+
+        fun noti(i:String,j:String) {
+            manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                val channel = NotificationChannel("g123", "g123", NotificationManager.IMPORTANCE_HIGH)
+                manager.createNotificationChannel(channel)
+                builder = Notification.Builder(this, "g123")
+            } else {
+                builder = Notification.Builder(this)
+            }
+
+            builder.setSmallIcon(R.drawable.calendar)
+                .setContentTitle(i)
+                .setContentText(j)
+                .setAutoCancel(true)
         }
 
         /**現在時間*/
@@ -53,9 +79,13 @@ class MainActivity : AppCompatActivity() {
                         sleep(1000)
                         runOnUiThread {
                             val tv_currentTime = findViewById<TextView>(R.id.tv_currentTime)
-                            val sdf = SimpleDateFormat("yyyy/M/dd\nHH:mm:ss")
+                            val sdf = SimpleDateFormat("yyyy/MM/dd\nHH:mm:ss")
                             val currentDate = sdf.format(Date())
                             tv_currentTime.text = ("現在時間\n$currentDate")
+                            if(pureTimeDate==currentDate){
+                                noti(eventName.toString(),date.toString())
+                                manager.notify(0, builder.build())
+                            }
                         }
                     }
                 } catch (e: InterruptedException) {
