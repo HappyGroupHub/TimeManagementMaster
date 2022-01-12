@@ -7,67 +7,24 @@
     android:background="@drawable/addbackground"
     tools:context=".ActivityAddEvent"
     tools:layout_editor_absoluteX="3dp"
-    tools:layout_editor_absoluteY="32dp">
+    tools:layout_editor_absoluteY="32dp"><![CDATA[
 
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="8dp"
-        android:text="新增活動"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/et_eventName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="32dp"
-        android:ems="10"
-        android:hint="新增標題"
-        android:inputType="textPersonName"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
-    <TextView
-        android:id="@+id/tv_time_add_event"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="252dp"
-        android:text="時間:"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" /><![CDATA[
+
+
+
 
     app:layout_constraintTop_toTopOf="parent"
     tools:ignore="TouchTargetSizeCheck" />
 
 
 
-    ]]>
 
-    <TextView
-        android:id="@+id/tv_noticeTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="384dp"
-        android:text="通知時間:"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" /><![CDATA[
+
+
+
+
 
 
 
@@ -97,50 +54,184 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
     ]]>
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
+    <TextView
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
-        android:layout_height="64dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="448dp"
-        android:layout_marginEnd="18dp"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="8dp"
+        android:text="新增活動"
+        android:textColor="@color/black"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_frequency"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="382dp"
+        android:layout_height="437dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/rectangle_view"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <RadioButton
-            android:id="@+id/rb_month"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="361dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/et_eventName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="新增標題"
+                android:inputType="textPersonName"
+                android:textSize="34sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_time_add_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="時間:"
+                android:textColor="@color/black"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/tv_selectedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="34sp" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_selectTime"
+                style="@style/btn_primary"
+                android:layout_width="106dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="10dp"
+                android:text="選擇時間"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="每月"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="119dp"
-            tools:layout_editor_absoluteY="464dp" />
+            android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/rb_week"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/tv_noticeTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="通知時間:"
+                android:textColor="@color/black"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="尚未選擇時間"
+                android:textColor="@color/black"
+                android:textSize="34sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="每週"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="191dp"
-            tools:layout_editor_absoluteY="464dp" />
+            android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/rb_noRepeat"
-            android:layout_width="117dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="不重複"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="264dp"
-            tools:layout_editor_absoluteY="448dp" />
-    </RadioGroup>
+            <TextView
+                android:id="@+id/tv_frequency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="週期:"
+                android:textColor="@color/black"
+                android:textSize="34sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="每月"
+                    android:textSize="25sp"
+                    tools:layout_editor_absoluteX="119dp"
+                    tools:layout_editor_absoluteY="464dp" />
+
+                <RadioButton
+                    android:id="@+id/rb_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="每週"
+                    android:textSize="25sp"
+                    tools:layout_editor_absoluteX="191dp"
+                    tools:layout_editor_absoluteY="464dp" />
+
+                <RadioButton
+                    android:id="@+id/rb_noRepeat"
+                    android:layout_width="117dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="不重複"
+                    android:textSize="25sp"
+                    tools:layout_editor_absoluteX="264dp"
+                    tools:layout_editor_absoluteY="448dp" />
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_done"
@@ -148,60 +239,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="44dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="28dp"
         android:text="確認"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-    <TextView
-        android:id="@+id/tv_frequency"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="460dp"
-        android:text="週期:"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="384dp"
-        android:text="尚未選擇時間"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_selectedDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="252dp"
-        android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/tv_time_add_event"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_selectTime"
-        style="@style/btn_primary"
-        android:layout_width="106dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="310dp"
-        android:layout_marginEnd="32dp"
-        android:text="選擇時間"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

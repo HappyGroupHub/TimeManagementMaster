@@ -58,10 +58,13 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="324dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="377dp"
+        android:layout_height="163dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rectangle_view"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btn_hideFunction"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_settings">
@@ -92,19 +95,20 @@
         android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
         android:text="點我打開隱藏功能"
+        app:layout_constraintBottom_toTopOf="@+id/l_controlnvisable"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:id="@+id/l_controlnvisable"
         android:layout_width="379dp"
         android:layout_height="260dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/rectangle_view"
         android:orientation="vertical"
