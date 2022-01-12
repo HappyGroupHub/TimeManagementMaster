@@ -46,11 +46,15 @@ class ActivitySettings : AppCompatActivity() {
         editor.apply()
 
 
+        /**隱藏按鈕*/
         btn_hideFunction.setOnClickListener {
             if (l_controlnvisable.isVisible) {
                 l_controlnvisable.visibility = View.GONE
             } else l_controlnvisable.visibility = View.VISIBLE
         }
+
+
+
 
         ibt_main.setOnClickListener {
             startActivity(intent_main)
