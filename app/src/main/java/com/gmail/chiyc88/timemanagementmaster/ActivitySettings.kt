@@ -126,7 +126,7 @@ class ActivitySettings : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         }
 
         val tv_time2 = findViewById<TextView>(R.id.tv_time2)
-        tv_time2.text = "$savedYear 年$savedMonth 月$savedDay 日\n$minuteMM:$hourHH"
+        tv_time2.text = "$savedYear 年$savedMonth 月$savedDay 日\n$hourHH:$minuteMM"
     }
 
 
