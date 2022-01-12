@@ -10,6 +10,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.TextClock
 import android.widget.TextView
 import org.w3c.dom.Text
@@ -40,14 +41,14 @@ class MainActivity : AppCompatActivity() {
         val eventName = preferences.getString("eventName", "")
         val date = preferences.getString("date", "")
         val time = preferences.getString("time", "")
-        val wt_notice=preferences.getString("notice","")
+        val wt_notice =preferences.getString("notice","")
         val voice=preferences.getString("voice","")
         val pureTimeDate = preferences.getString("pureTimeDate", "")
 
 //        if (eventName != null) {
 //            if (!eventName.isEmpty()) {
                 tv_event.text =
-                    "活動名稱: $eventName\n時間: $date $time"
+                    "活動名稱: $eventName\n時間:\n$date $time"
 //            }
 //        }
 

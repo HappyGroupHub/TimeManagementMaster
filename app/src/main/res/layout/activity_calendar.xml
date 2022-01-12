@@ -65,6 +65,7 @@
 
     <Button
         android:id="@+id/btn_addEvent"
+        style="@style/btn_primary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="288dp"

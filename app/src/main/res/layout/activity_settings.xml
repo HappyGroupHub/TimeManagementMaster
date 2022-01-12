@@ -51,6 +51,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:text="設定"
+        android:textColor="@color/black"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -58,10 +59,11 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="324dp"
-        android:layout_height="193dp"
+        android:layout_height="160dp"
         android:layout_marginTop="8dp"
         android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="@+id/tv_settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_settings">
 
         <CheckBox
@@ -69,8 +71,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="顯示浮動通知"
-            android:textSize="20sp" />
+            android:text="顯示顯示通知"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
 
         <CheckBox
             android:id="@+id/cb_noticeVoice"
@@ -78,40 +81,44 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="開啟提示音"
-            android:textSize="20sp" />
+            android:textColor="@color/black"
+            android:textSize="24sp" />
 
-        <CheckBox
-            android:id="@+id/cb_lookScreenNotice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="鎖定顯示螢幕通知"
-            android:textSize="20sp" />
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_hideFunction"
-        android:layout_width="wrap_content"
+        style="@style/btn_primary"
+        android:layout_width="290dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
         android:text="點我打開隱藏功能"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <LinearLayout
-        android:layout_width="357dp"
+        android:id="@+id/l_controlnvisable"
+        android:layout_width="379dp"
         android:layout_height="260dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/rectangle_view"
         android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_hideFunction">
 
         <Button
             android:id="@+id/btn_explain"
+            style="@style/btn_primary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:layout_weight="1"
             android:text="說明"
             tools:ignore="TouchTargetSizeCheck" />
 
@@ -126,6 +133,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="推播時間："
+                android:textColor="@color/black"
                 android:textSize="24sp" />
 
             <ListView
@@ -140,7 +148,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="年"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                tools:textColor="@color/black" />
 
             <ListView
                 android:layout_width="42dp"
@@ -153,7 +162,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="月"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                tools:textColor="@color/black" />
 
             <ListView
                 android:layout_width="42dp"
@@ -167,7 +177,8 @@
                 android:layout_weight="1"
                 android:text="日"
                 android:textSize="24sp"
-                tools:layout_weight="1" />
+                tools:layout_weight="1"
+                tools:textColor="@color/black" />
 
         </LinearLayout>
 
@@ -213,6 +224,7 @@
                 android:layout_marginStart="110dp"
                 android:layout_marginTop="6dp"
                 android:text="週期："
+                android:textColor="@color/black"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -259,6 +271,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="內容："
+                android:textColor="@color/black"
                 android:textSize="24sp" />
 
             <EditText

@@ -3,13 +3,15 @@ package com.gmail.chiyc88.timemanagementmaster
 import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Intent
+import android.content.res.Resources
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.applandeo.materialcalendarview.EventDay
+import androidx.core.content.res.ResourcesCompat
 import java.util.*
+import com.applandeo.materialcalendarview.EventDay
 
 class ActivityCalendar : AppCompatActivity() {
 
@@ -24,7 +26,7 @@ class ActivityCalendar : AppCompatActivity() {
                     calendar.time = calendar.time
                     val event: MutableList<EventDay> = ArrayList()
                     /**在event陣列中新增一個元素 */
-                    event.add(EventDay(calendar, R.drawable.textview_border))
+                    event.add(EventDay(calendar, R.drawable.clock))
                     runOnUiThread {
                         /**刷新介面 */
                         calendarView.setEvents(event)
