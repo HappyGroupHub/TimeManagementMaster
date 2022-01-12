@@ -103,7 +103,7 @@ class ActivitySettings : AppCompatActivity(), DatePickerDialog.OnDateSetListener
 
     override fun onDateSet(p0: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         savedDay = dayOfMonth
-        savedMonth = month
+        savedMonth = month+1 //神奇的bug, 要+1才會正常
         savedYear = year
 
         getDateTimeCalendar()
