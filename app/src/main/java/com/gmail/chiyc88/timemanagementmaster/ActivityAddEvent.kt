@@ -79,8 +79,12 @@ class ActivityAddEvent : AppCompatActivity(), TimePickerDialog.OnTimeSetListener
     override fun onTimeSet(p0: TimePicker?, hourOfDay: Int, minute: Int) {
         savedHour = hourOfDay
         savedMinute = minute
+        var minuteMM = minute.toString() /**如果分鐘<10*/
+        if (minute < 10) {
+            minuteMM = "0$minute"
+        }
         val tv_time = findViewById<TextView>(R.id.tv_time)
-        tv_time.text = "$hourOfDay:$minute"
-        pureTime = "$hourOfDay:$minute:00"
+        tv_time.text = "$hourOfDay:$minuteMM"
+        pureTime = "$hourOfDay:$minuteMM:00"
     }
 }
